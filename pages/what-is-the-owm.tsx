@@ -1,49 +1,31 @@
 import Head from "next/head";
 import Link from "next/link";
-import OWM_SCENE from "../assets/spline/owm-welcome-scene/scene.json";
 import styled from "styled-components";
 
-import dynamic from "next/dynamic";
-import { ComponentType } from "react";
-
-const Spline: ComponentType<{ scene: typeof OWM_SCENE }> = dynamic(
-  () => import("react-spline").then((mod) => mod.Spline),
-  {
-    ssr: false,
-  }
-);
-
-export default function Home() {
+export default function WhatIsTheOWM() {
   return (
     <HomePageWrapper>
       <Head>
-        <title>Organized Work Machine</title>
+        <title>Organized Work Machine - What is the OWM?</title>
         <meta
           name="description"
           content="A finite state machine to help you through your work flow."
         />
       </Head>
 
-      <HomePageContentWrapper>
-        <SplineWrapper>
-          <Spline scene={OWM_SCENE} />
-        </SplineWrapper>
-        <Title>
-          The{" "}
-          <Link href="/what-is-the-owm">
-            <OWMAboutLink>
-              Organized Work <span style={{ color: "#50de22bf" }}>Machine</span>
-            </OWMAboutLink>
-          </Link>
-        </Title>
-
-        <Description>Powered by XState</Description>
-
-        <StartWorkingButton>Start Working</StartWorkingButton>
-      </HomePageContentWrapper>
+      <p>Test</p>
     </HomePageWrapper>
   );
 }
+
+const HomePageContentWrapper = styled.main`
+  padding: 0 0 2.5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 const HomePageWrapper = styled.div`
   min-height: 100vh;
@@ -53,15 +35,6 @@ const HomePageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-`;
-
-const HomePageContentWrapper = styled.main`
-  padding: 0 0 2.5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
 
 const StartWorkingButton = styled.button`
