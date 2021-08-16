@@ -53,6 +53,7 @@ const HomePageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
 `;
 
 const HomePageContentWrapper = styled.main`
@@ -75,6 +76,7 @@ const StartWorkingButton = styled.button`
   transition: background-color 0.2s ease-in-out;
   box-sizing: border-box;
   border: 4px solid transparent;
+  transform: translateY(-25vh);
 
   &:hover {
     cursor: pointer;
@@ -92,17 +94,20 @@ const Title = styled.h1`
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  transform: translateY(-25vh);
 `;
 
 const SplineWrapper = styled.div`
   display: flex;
   height: 910px;
   width: 100%;
+  margin-top: 10vh;
 `;
 
 const Description = styled.p`
   line-height: 1.5;
   font-size: 1.5rem;
+  transform: translateY(-25vh);
 `;
 
 const OWMAboutLink = styled.a`
